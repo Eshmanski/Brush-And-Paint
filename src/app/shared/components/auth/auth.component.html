@@ -1,0 +1,35 @@
+<div class="bg" *ngIf="isShow">
+  <div class="module" *ngIf="isSingInWindow; else singUpWindow">
+    <div (click)="onClose()" class="close-btn">
+      <img src="./assets/xmark-solid.svg" alt="">
+    </div>
+    <h1>Войти</h1>
+
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <label for="login">Логин</label>
+      <input type="text" name="login" id="login" formControlName="email">
+      <label for="password">Пароль</label>
+      <input type="password" name="password" id="password" formControlName="password">
+      <button class="btn btn-success">Войти</button>
+    </form>
+    <p class="link" (click)="switchWindow()">Регистрация</p>
+  </div>
+
+  <ng-template #singUpWindow>
+    <div class="module">
+      <div (click)="onClose()" class="close-btn">
+        <img src="./assets/xmark-solid.svg" alt="">
+      </div>
+      <h1>Регистрация</h1>
+
+      <form [formGroup]="form" (ngSubmit)="register()">
+        <label for="loginReg">Логин</label>
+        <input type="text" name="login" id="loginReg" formControlName="email">
+        <label for="passwordReg">Пароль</label>
+        <input type="password" name="password" id="passwordReg" formControlName="password">
+        <button class="btn btn-success">Зарегестрироваться</button>
+      </form>
+      <p class="link" (click)="switchWindow()">Войти</p>
+    </div>
+  </ng-template>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faPaintBrush, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import {faPaintBrush, faShoppingCart, IconDefinition} from "@fortawesome/free-solid-svg-icons";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-main-layout',
@@ -7,13 +8,28 @@ import { faPaintBrush, faShoppingCart, faUser } from "@fortawesome/free-solid-sv
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-  faBrush = faPaintBrush;
-  faCart = faShoppingCart;
-  faUser = faUser;
+  faBrush: IconDefinition   = faPaintBrush;
+  faCart: IconDefinition    = faShoppingCart;
 
-  constructor() { }
+
+  isShow: boolean = false;
+
+  constructor(
+    public auth: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onShowAuth() {
+    this.isShow = true;
+  }
+
+  hideAuth() {
+    this.isShow = false;
+  }
+
+  logoutHandler() {
+    this.auth.logout();
+  }
 }

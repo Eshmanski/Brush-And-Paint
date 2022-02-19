@@ -9,8 +9,12 @@ import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthComponent } from './shared/components/auth/auth.component';
+import { HttpClientModule } from "@angular/common/http";
+import { MatIconModule } from "@angular/material/icon";
+
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CatalogPageComponent,
     AboutPageComponent,
     CartPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

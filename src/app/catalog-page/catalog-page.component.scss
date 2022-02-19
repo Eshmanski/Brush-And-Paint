@@ -1,0 +1,22 @@
+.catalog {
+  box-sizing: border-box;
+  width: 100%;
+  height: 1000px;
+  border: 2px dashed #9e9e9e;
+  display: flex;
+  flex-direction: row;
+
+  .filters-wrapper {
+    box-sizing: border-box;
+    width: 200px;
+    height: 1000px;
+    border: 2px dashed #9e9e9e;
+  }
+
+  .list-products {
+    box-sizing: border-box;
+    width: 100%;
+    height: 1000px;
+    border: 2px dashed #9e9e9e;
+  }
+}

@@ -35,6 +35,19 @@
   .active>a {
     color: var(--primary-color);
   }
+
+  .enter {
+    color: #333;
+    cursor: pointer;
+
+    &:hover {
+      color: #666;
+    }
+
+    mat-icon {
+      vertical-align: middle;
+    }
+  }
 }
 
 

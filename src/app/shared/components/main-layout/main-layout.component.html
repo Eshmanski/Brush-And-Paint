@@ -1,3 +1,5 @@
+<app-auth [isShow]="isShow" (hideAuth)="hideAuth()"></app-auth>
+
 <nav class="main navbar container">
   <ul class="logo">
     <fa-icon [icon]="faBrush"></fa-icon>
@@ -16,10 +18,24 @@
     <a [routerLink]="['/', 'cart']"><fa-icon class="nav-icon" [icon]="faCart"></fa-icon></a>
   </ul>
   <ul routerLinkActive="active">
-    <a [routerLink]="['/', 'profile']"><fa-icon class="nav-icon" [icon]="faUser"></fa-icon></a>
+    <div
+      *ngIf="!auth.isAuthenticated(); else logout"
+      (click)="onShowAuth()"
+      class="enter"
+    >
+      <mat-icon class="door"><span class="material-icons-outlined">login</span></mat-icon>
+    </div>
+
+    <ng-template #logout>
+      <div
+        (click)="logoutHandler()"
+        class="enter"
+      >
+        <mat-icon><span class="material-icons-outlined">logout</span></mat-icon>
+      </div>
+    </ng-template>
   </ul>
 </nav>
-
-<main class="container">
+<main>
   <router-outlet></router-outlet>
 </main>
