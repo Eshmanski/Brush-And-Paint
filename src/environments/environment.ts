@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: 'AIzaSyBPoX8qbmqN4V0wnZ8P5o1mkl7zPNNTcWg'
+  apiKey: '-',
+  DBUrl: '-'
 };
 
 /*

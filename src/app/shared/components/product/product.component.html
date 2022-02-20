@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-image">
+    <div class="image-wrap"></div>
+    <img *ngIf="!isErrorLoadImage; else alternative" [src]="product.image"  alt="" (error)="errorImage($event)">
+
+    <ng-template #alternative>
+      <img src="./assets/none.png"  alt="">
+    </ng-template>
+  </div>
+  <div class="info">
+    <p class="card-title">{{product.title}}</p>
+    <p class="card-price">{{product.price}}</p>
+  </div>
+</div>

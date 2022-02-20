@@ -1,0 +1,17 @@
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+
+  >div {
+    margin-bottom: 20px;
+  }
+}
+
+img {
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}

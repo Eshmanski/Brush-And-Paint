@@ -14,7 +14,11 @@ const routes: Routes = [
       { path: 'about', component: AboutPageComponent },
       { path: 'cart', component: CartPageComponent },
       { path: 'profile', component: ProfilePageComponent },
-    ] }
+    ]
+  },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+  }
 ];
 
 @NgModule({

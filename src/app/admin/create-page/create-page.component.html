@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="flex row flex-center">
+
+    <img [src]="image" alt="" *ngIf="image; else noneImage">
+    <ng-template #noneImage>
+      <img src="./assets/none.png" alt="">
+    </ng-template>
+
+    <form class="form" [formGroup]="form">
+      <div>
+        <label for="title">Имя</label>
+        <input name="title" type="text" id="title" formControlName="title">
+      </div>
+      <div>
+        <label for="category">Категория</label>
+        <select id="category" name="category" formControlName="category">
+          <option value="Краска">Краска</option>
+          <option value="Кисть">Кисть</option>
+          <option value="Бумага">Бумага</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="price">Цена</label>
+        <input name="price" type="text" id="price" formControlName="price">
+      </div>
+      <div>
+        <label for="image">Картинка</label>
+        <input name="image" type="file" id="image" (change)="onFileChange($event)" formControlName="imageChoose">
+        <input name="hiddenFile" type="hidden" formControlName="image">
+      </div>
+
+      <button class="btn btn-success" (click)="onSubmit()" [disabled]="this.form.invalid">
+        Добавить
+      </button>
+    </form>
+  </div>
+</div>

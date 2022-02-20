@@ -1,8 +1,22 @@
 <div class="catalog container">
   <div class="filters-wrapper">
-
+    <app-filter ></app-filter>
   </div>
   <div class="list-products">
-gi
+    <div class="grid-products">
+      <app-product *ngFor="let product of products | filter:currentPage:countEl" [product]="product"></app-product>
+    </div>
+
+    <div class="pagination">
+      <button
+        *ngFor="let num of numSequence(pages)"
+        [ngClass]="currentPage === num ? 'active' : ''"
+        class="btn btn-number"
+        (click)="switchPage(num)"
+      >
+        {{num}}
+      </button>
+    </div>
+
   </div>
 </div>

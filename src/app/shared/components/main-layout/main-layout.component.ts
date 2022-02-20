@@ -22,10 +22,12 @@ export class MainLayoutComponent implements OnInit {
   }
 
   onShowAuth() {
+    document.body.style.overflow = 'hidden';
     this.isShow = true;
   }
 
   hideAuth() {
+    document.body.style.overflow = 'auto';
     this.isShow = false;
   }
 

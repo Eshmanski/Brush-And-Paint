@@ -1,9 +1,9 @@
 .bg {
-  position: absolute;
+  z-index: 99;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgba(102, 102, 102, 0.33);
-
 }
 
 .module {

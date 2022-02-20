@@ -9,11 +9,11 @@ import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthComponent } from './shared/components/auth/auth.component';
-import { HttpClientModule } from "@angular/common/http";
-import { MatIconModule } from "@angular/material/icon";
+import { ProductComponent } from './shared/components/product/product.component';
+import { FilterComponent } from './shared/components/filter/filter.component';
+import {SharedModule} from "./shared/shared.module";
+import {FilterPipe} from "./shared/pipes/filter.pipe";
 
 
 @NgModule({
@@ -25,16 +25,14 @@ import { MatIconModule } from "@angular/material/icon";
     AboutPageComponent,
     CartPageComponent,
     ProfilePageComponent,
-    AuthComponent
+    AuthComponent,
+    ProductComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
+    SharedModule,
     AppRoutingModule,
-    HttpClientModule,
-    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
